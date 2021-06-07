@@ -1,8 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Axios from 'axios';
+import './Navbar.css';
 import Card from './Card/Card';
 
+
 const Navbar = () => {
+    
     const [searchName, setSearchName] = useState('');
     const [pokemonWeight, setPokemonWeight] = useState('');
     const [pokemonHeight, setPokemonHeight] = useState('');
@@ -12,8 +15,6 @@ const Navbar = () => {
     const [pokemonMainImg, setPokemonMainImg] = useState('');
     const [pokemonSprites, setSprites] = useState([]);
     const [pokemonAbilities, setPokemonAbilities] = useState([]);
-
-
 
     const fetchPokemon = (name) => {
         Axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
@@ -60,7 +61,6 @@ const Navbar = () => {
 
     const handleInput  = (e) => {
         setSearchName(e.target.value.toLowerCase());
-        console.log(searchName)
     }
     
 
@@ -70,13 +70,11 @@ const Navbar = () => {
 
     }
 
-
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='pokemon-search'> Find Your Pokemon:</label>
-                <input className='input' type='text' name='pokemon-search' onChange={handleInput} placeholder='pokemon type' value={searchName}></input>
-                <button className='button' type='submit'>SUBMIT</button>
+                <input className='NavInput' onChange={handleInput} value={searchName} type='text'></input>
+                <button className='NavButton' type='submit'>search</button>
             </form>
             <Card name={pokemonName} weight={pokemonWeight} height={pokemonHeight} types={pokemonTypes} stats={pokemonStats} abilities={pokemonAbilities} sprites={pokemonSprites} image={pokemonMainImg} />
         </div>

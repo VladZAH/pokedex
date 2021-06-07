@@ -1,0 +1,13 @@
+.NavButton{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #2e8b57;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.NavInput{
+    margin-top: 50px; 
+    font-size: 30px;
+    border-radius: 10px;
+}

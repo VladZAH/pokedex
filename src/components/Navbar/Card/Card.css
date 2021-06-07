@@ -1,0 +1,55 @@
+.frame{
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 50px;
+    border: 15px solid gold;
+    border-radius: 10px;
+    background: #BA5370;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F4E2D8, #BA5370);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F4E2D8, #BA5370); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.mainImg{
+    width: 400px;
+    border: 5px solid gold;
+    margin: auto;
+    background: #abbaab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.type{
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    float: right;
+    padding: 5px;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+.name{
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    float: left;
+    font-weight: bold;
+    height: 39px;
+}
+.hp{
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    float: left;
+}   
+
+.info{
+    margin-bottom: 20px;
+}
+
+.stats{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
