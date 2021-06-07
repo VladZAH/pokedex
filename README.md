@@ -1,3 +1,7 @@
+# My mini pokedex App source Code. You can install it on your machine using npm install while inside project directory
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
