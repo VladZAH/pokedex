@@ -1,4 +1,5 @@
-# My mini pokedex App source Code. App is deployed at: https://mini-pokedex007.herokuapp.com/
+# The application is deployed at: https://mini-pokedex007.herokuapp.com/
+# This is my mini pokedex App source Code
 # You can install it on your machine using npm install while inside project directory
 
 
