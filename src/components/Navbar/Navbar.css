@@ -1,13 +1,28 @@
 .NavButton{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     background-color: #2e8b57;
     border-radius: 10px;
     font-size: 30px;
 }
 
 .NavInput{
-    margin-top: 50px; 
+    margin-top: 30px;
+    margin-left: 30px; 
     font-size: 30px;
     border-radius: 10px;
+}
+
+.formBar{
+    background: #536976; 
+    background: -webkit-linear-gradient(to right, #292E49, #536976); 
+    background: linear-gradient(to right, #292E49, #536976);
+}
+
+.autocomplete:hover{
+    border: 1px solid gray;
+}
+
+.AcDiv{
+    background: white; 
 }
