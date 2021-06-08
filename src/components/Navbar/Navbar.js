@@ -7,7 +7,6 @@ import Card from './Card/Card';
 const Navbar = () => {
     // defining state
     const [notFound, setNotFound] = useState(false)
-    const [autocomplete, setAutocomplete] = (useState(false))
     const [allPokemons, setAllPokemons] = useState([]);
     const [allNames, setAllNames] = useState([]);
     const [searchName, setSearchName] = useState('');
@@ -90,7 +89,7 @@ const Navbar = () => {
     const changeInput = (e) => {
         e.preventDefault()
         setSearchName(e.currentTarget.textContent)
-        setAutocomplete(false)
+        setAllNames([])
     }
 
     // handle changes toinput and autocorrect updates
@@ -98,38 +97,46 @@ const Navbar = () => {
         setSearchName(e.target.value.toLowerCase());
         let names = [];
         allPokemons.forEach((p) => {
-            if(p.name.includes(searchName) && !p.name.includes('-')){
+            if(p.name.includes(e.target.value) && !p.name.includes('-')){
                 names.push(p.name)
             }
         })
+        if (e.target.value === ''){
+            names = []
+            setSearchName('')
+            setAllNames([])  
+        }
         if(names.length >= 1){
             if(names.length >= 20){
-                names = names.slice(0, 20)
+                names = names.slice(0, 40)
             }
             setAllNames(names)
-            setAutocomplete(true)
+           
+        }else{
+            names = []
+            setAllNames([])
+            
         }
+
     }
     
-    // handles form submit and trigers API call
+    // handles form submit and makes Api calls
     const handleSubmit = (e) => {
         e.preventDefault();
         fetchPokemon(searchName)
-        setAutocomplete(false)
         setSearchName('')
-
+        setAllNames([])
     }
 
     return(
         <div>
             <form className='formBar' onSubmit={handleSubmit}>
+                <div className='AcDiv'>{allNames.map((name) => {
+                    return <div onClick={changeInput} className='autocomplete' value={name} key={name}>{name}</div>
+                    })}
+                </div>
                 <input className='NavInput' onChange={handleInput} value={searchName} type='text'></input>
                 <button className='NavButton' type='submit'>search</button>
-                
-                    {autocomplete && <div className='AcDiv'>{allNames.map((name) => {
-                        return <div onClick={changeInput} className='autocomplete' value={name} key={name}>{name}</div>
-                    })}
-                    </div>}
             </form>
             <Card name={pokemonName} weight={pokemonWeight} height={pokemonHeight} types={pokemonTypes} stats={pokemonStats} abilities={pokemonAbilities} sprites={pokemonSprites} image={pokemonMainImg} />
             {notFound && <p>Your pokemon in not found</p>}

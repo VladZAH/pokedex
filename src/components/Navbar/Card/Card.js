@@ -107,7 +107,7 @@ const Card = (props) => {
         } else {
             return (
                 <div className='init'>
-                    Please type the name of the pokemon You wish to see and press 'search' or 'return' 
+                    Please type the name of the pokemon You wish to see and click 'search' button
                 </div>
             );
         }
