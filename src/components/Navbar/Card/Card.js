@@ -37,7 +37,7 @@ const Card = (props) => {
     const speed = props.stats[5]
 
     // handler for rendering sprites, abilities and types;
-    const renderSprites = props.sprites.map((s) => <img key={s} src={s} alt='/'></img>);
+    const renderSprites = props.sprites.map((s) => <img className='sprite' key={s} src={s} alt='/'></img>);
     const renderAbilities = props.abilities.map((a) => <span className='abillity' key={a}>{a}</span>);
     const renderTypes = props.types.map((t) => <span style={{backgroundColor: colours[t]}} key={t} className='type'>{t}</span>);
 
@@ -70,12 +70,14 @@ const Card = (props) => {
             return (
                 <div className='frame' style={FrameBackground}>
                     <div>
-                    <span className='name'>{props.name.toUpperCase()}</span>
-                    <span className='hp'>HP:{hp}</span>
-                    {renderTypes}
+                        <span className='name'>{props.name.toUpperCase()}</span>
+                        <span className='hp'>HP:{hp}</span>
+                        {renderTypes}
                     </div>
-                    <img className='mainImg'  src={props.image} alt='/'></img>
-                    <div>{renderSprites}</div> 
+                    <div className='imgDiv'>
+                        <img className='mainImg'  src={props.image} alt='/'></img>
+                    </div>
+                    <div className='sprites'>{renderSprites}</div> 
                     <div className='info'>
                         <p className='heightWeight'>Height: {props.height}" ------  Weight: {props.weight} lb</p>
                         <p className='stat'>Atack: {atack}</p>

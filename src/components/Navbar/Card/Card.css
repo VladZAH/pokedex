@@ -8,7 +8,7 @@
 }
 
 .mainImg{
-    width: 400px;
+    width: 70%;
     border: 5px solid gold;
     margin: auto;
     background: #abbaab;  /* fallback for old browsers */
@@ -19,7 +19,7 @@
 
 .type{
     margin-top: 20px;
-    margin-right: 30px;
+    margin-right: 5%;
     margin-bottom: 20px;
     font-size: 20px;
     float: right;
@@ -37,7 +37,12 @@
     font-weight: bold;
     height: 39px;
 }
-
+.sprites{
+    width: 100%;
+}
+.sprite{
+    width: 16%;
+}
 .hp{
     margin-top: 20px;
     margin-left: 30px;
@@ -87,10 +92,44 @@
 
 .heightWeight{
     font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .init{
     margin-top: 100px;
     font-size: 30px;
     font-weight: bolder;
+}
+
+@media screen and (max-width: 410px) {
+    .type{
+        margin-top: 20px;
+        margin-right: 5%;
+        margin-bottom: 20px;
+        font-size: 15px;
+        float: right;
+        padding: 3px;
+        border-radius: 5px;
+        border: 2px solid black;
+    }
+
+    .name{
+        margin-top: 20px;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        float: left;
+        font-weight: bold;
+        height: 39px;
+    }
+
+    .hp{
+        margin-top: 20px;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        float: left;
+    }
+
 }
